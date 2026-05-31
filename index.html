@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Santolomeo Store – PC & Componentes</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+  <span><i class="fa fa-truck"></i> Envíos gratis en compras mayores a G. 500.000</span>
+  <span><i class="fa fa-phone"></i> +595 981 000000</span>
+  <span><i class="fab fa-whatsapp"></i> WhatsApp</span>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <img src="assets/logo.png" alt="Santolomeo Store" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-text').style.display='flex'"/>
+      <div class="logo-fallback" id="logo-text">
+        <div class="logo-hex"><span>S</span></div>
+        <div>
+          <div class="logo-name">SANTOLOMEO</div>
+          <div class="logo-sub">STORE</div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="nav-main">
+      <a href="#inicio">Inicio</a>
+      <div class="dropdown">
+        <a href="#categorias">Categorías <i class="fa fa-chevron-down"></i></a>
+        <div class="dropdown-menu">
+          <a href="#cat-componentes"><i class="fa fa-microchip"></i> Componentes</a>
+          <a href="#cat-monitores"><i class="fa fa-display"></i> Monitores</a>
+          <a href="#cat-notebooks"><i class="fa fa-laptop"></i> Notebooks</a>
+          <a href="#cat-juegos"><i class="fa fa-gamepad"></i> Juegos y Consolas</a>
+          <a href="#cat-gabinetes"><i class="fa fa-box-open"></i> Gabinetes Gamer</a>
+          <a href="#cat-perifericos"><i class="fa fa-keyboard"></i> Periféricos</a>
+        </div>
+      </div>
+      <a href="#ofertas">Ofertas</a>
+      <a href="#armaTuPC">Arma tu PC</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <!-- Mobile hamburger -->
+    <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="header-actions">
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar productos..." id="search-input" oninput="handleSearch(this.value)"/>
+        <button><i class="fa fa-search"></i></button>
+      </div>
+      <button class="cart-btn" onclick="toggleCart()">
+        <i class="fa fa-cart-shopping"></i>
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+      <button class="btn-login"><i class="fa fa-user"></i> Ingresar</button>
+    </div>
+  </div>
+
+  <!-- Mobile nav -->
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="#inicio" onclick="toggleMobileMenu()">Inicio</a>
+    <a href="#cat-placas-de-video" onclick="toggleMobileMenu()">Placas de video</a>
+    <a href="#featured-cats" onclick="toggleMobileMenu()">Placas madre</a>
+    <a href="#featured-cats" onclick="toggleMobileMenu()">Procesadores</a>
+    <a href="#featured-cats" onclick="toggleMobileMenu()">Fuentes</a>
+    <a href="#featured-cats" onclick="toggleMobileMenu()">Memoria RAM</a>
+    <a href="#cat-almacenamiento" onclick="toggleMobileMenu()">SSD</a>
+    <a href="#cat-almacenamiento" onclick="toggleMobileMenu()">HD</a>
+    <a href="#cat-gabinetes" onclick="toggleMobileMenu()">Gabinetes</a>
+    <a href="#cat-monitores" onclick="toggleMobileMenu()">Monitores</a>
+    <a href="#cat-almacenamiento" onclick="toggleMobileMenu()">Almacenamiento</a>
+    <a href="#cat-perifericos" onclick="toggleMobileMenu()">PerifÃ©ricos</a>
+    <a href="#ofertas" onclick="toggleMobileMenu()">Ofertas</a>
+  </nav>
+</header>
+
+<!-- ===== HERO SLIDER ===== -->
+<section class="hero" id="inicio">
+  <div class="hero-slides">
+
+    <div class="slide active" style="--slide-bg: #0d0d14;">
+      <div class="slide-bg-img">
+        <img src="assets/hero-gpu.jpg" alt="Hero GPU" onerror="this.style.display='none'"/>
+      </div>
+      <div class="slide-content">
+        <div class="slide-badge">🔥 OFERTA ESPECIAL</div>
+        <h1>RTX 5090 Ti<br/><span class="accent">Super Series</span></h1>
+        <p>Rendimiento extremo para gaming 4K y creación de contenido. La GPU más potente del mercado.</p>
+        <div class="slide-price">
+          <span class="old-price">G. 8.500.000</span>
+          <span class="new-price">G. 6.990.000</span>
+          <span class="discount-badge">-18%</span>
+        </div>
+        <div class="slide-actions">
+          <button class="btn-primary" onclick="addToCart('RTX 5090 Ti', 6990000, 'fa-display')">Agregar al Carrito</button>
+          <button class="btn-outline">Ver Detalles</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide" style="--slide-bg: #080d14;">
+      <div class="slide-bg-img">
+        <img src="assets/hero-cpu.jpg" alt="Hero CPU" onerror="this.style.display='none'"/>
+      </div>
+      <div class="slide-content">
+        <div class="slide-badge">NUEVO STOCK</div>
+        <h1>Intel Core<br/><span class="accent">i9-15900K</span></h1>
+        <p>El procesador mas rápido de Intel para gaming competitivo y workstations profesionales.</p>
+        <div class="slide-price">
+          <span class="old-price">G. 4.200.000</span>
+          <span class="new-price">G. 3.490.000</span>
+          <span class="discount-badge">-17%</span>
+        </div>
+        <div class="slide-actions">
+          <button class="btn-primary" onclick="addToCart('Intel i9-15900K', 3490000, 'fa-microchip')">Agregar al Carrito</button>
+          <button class="btn-outline">Ver Detalles</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide" style="--slide-bg: #0d1208;">
+      <div class="slide-bg-img">
+        <img src="assets/hero-pc.jpg" alt="Hero PC Gamer" onerror="this.style.display='none'"/>
+      </div>
+      <div class="slide-content">
+        <div class="slide-badge">🎮 GAMING BUILD</div>
+        <h1>PC Gamer<br/><span class="accent">Ultra Ready</span></h1>
+        <p>PC armada lista para jugar. RTX 4070 + Ryzen 7 + 32GB RAM. Garantía 1 año.</p>
+        <div class="slide-price">
+          <span class="old-price">G. 12.000.000</span>
+          <span class="new-price">G. 9.990.000</span>
+          <span class="discount-badge">-17%</span>
+        </div>
+        <div class="slide-actions">
+          <button class="btn-primary" onclick="addToCart('PC Gamer Ultra', 9990000, 'fa-server')">Agregar al Carrito</button>
+          <button class="btn-outline">Ver Detalles</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="hero-controls">
+    <button class="hero-prev" onclick="changeSlide(-1)"><i class="fa fa-chevron-left"></i></button>
+    <div class="hero-dots">
+      <span class="dot active" onclick="goToSlide(0)"></span>
+      <span class="dot" onclick="goToSlide(1)"></span>
+      <span class="dot" onclick="goToSlide(2)"></span>
+    </div>
+    <button class="hero-next" onclick="changeSlide(1)"><i class="fa fa-chevron-right"></i></button>
+  </div>
+</section>
+
+<!-- ===== CATEGORÃAS RÃPIDAS ===== -->
+<section class="quick-cats" id="categorias">
+  <div class="full-container">
+    <div class="cats-grid">
+      <a href="#cat-placas-de-video" class="cat-card cat-card-featured">
+        <div class="cat-icon"><img src="assets/placa_devideo.jpeg" alt="Placas de video" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"/><i class="fa fa-puzzle-piece"></i></div>
+        <span>Placas de video</span>
+      </a>
+      <a href="#featured-cats" class="cat-card cat-card-featured">
+        <div class="cat-icon"><img src="assets/cat-placas-madre.webp" alt="Placas madre" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"/><i class="fa fa-server"></i></div>
+        <span>Placas madre</span>
+      </a>
+      <a href="#featured-cats" class="cat-card cat-card-featured">
+        <div class="cat-icon"><img src="assets/cat-procesadores.webp" alt="Procesadores" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"/><i class="fa fa-microchip"></i></div>
+        <span>Procesadores</span>
+      </a>
+      <a href="#featured-cats" class="cat-card cat-card-featured">
+        <div class="cat-icon"><img src="assets/cat-fuentes.webp" alt="Fuentes" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"/><i class="fa fa-bolt"></i></div>
+        <span>Fuentes</span>
+      </a>
+      <a href="#featured-cats" class="cat-card cat-card-featured">
+        <div class="cat-icon"><img src="assets/cat-memoria-ram.webp" alt="Memoria RAM" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"/><i class="fa fa-memory"></i></div>
+        <span>Memoria RAM</span>
+      </a>
+      <a href="#cat-almacenamiento" class="cat-card cat-card-featured">
+        <div class="cat-icon"><img src="assets/cat-ssd.webp" alt="SSD" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"/><i class="fa fa-hard-drive"></i></div>
+        <span>SSD</span>
+      </a>
+      <a href="#cat-gabinetes" class="cat-card">
+        <div class="cat-icon"><img src="assets/cat-gabinetes.webp" alt="Gabinetes" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"/><i class="fa fa-box-open"></i></div>
+        <span>Gabinetes</span>
+      </a>
+      <a href="#cat-monitores" class="cat-card">
+        <div class="cat-icon"><img src="assets/cat-monitores.webp" alt="Monitores" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"/><i class="fa fa-display"></i></div>
+        <span>Monitores</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SHOWCASE SECTION ===== -->
+<section class="showcase-section" id="featured-cats">
+  <div class="full-container">
+    <div class="showcase-section-header">
+      <h2 class="section-title">Categorías Destacadas</h2>
+      <p class="section-sub">Explorá nuestra selección premium de productos gamer</p>
+    </div>
+
+    <!-- ==================== PLACAS DE VIDEO ==================== -->
+    <div class="showcase-block" id="cat-placas-de-video">
+      <div class="showcase-cat-label">
+        <div class="showcase-cat-icon"><i class="fa fa-puzzle-piece"></i></div>
+        <div>
+          <h3 class="showcase-cat-title">Placas de video</h3>
+          <p class="showcase-cat-sub">Ray tracing & DLSS & Gaming 1440p y 4K</p>
+        </div>
+        <a href="#" class="btn-ver-todos" style="margin-left:auto">Ver todos <i class="fa fa-arrow-right"></i></a>
+      </div>
+      <div class="showcase-layout">
+        <div class="showcase-banner" id="banner-placas-de-video">
+          <img src="assets/banner_placadevideo.jpg" alt="Placas de video" class="banner-img" onerror="this.style.display='none'"/>
+          <div class="banner-overlay-info">
+            <span class="banner-cat-tag"><i class="fa fa-puzzle-piece"></i> Placas de video</span>
+            <p class="banner-slogan">Potencia para<br/><strong>jugar mejor</strong></p>
+          </div>
+        </div>
+        <div class="showcase-cards">
+          <div class="sc-card">
+            <div class="sc-card-img has-image">
+              <img src="assets/rtx-4060.webp" alt="NVIDIA GeForce RTX 4060" onerror="this.src=''; this.parentNode.classList.remove('has-image'); this.style.display='none'"/>
+              <span class="badge badge-hot sc-badge">ðŸ”¥ Popular</span>
+            </div>
+            <div class="sc-card-body">
+              <div class="sc-ref">Ref: GPU4060</div>
+              <div class="sc-brand">NVIDIA</div>
+              <div class="sc-name">GeForce RTX 4060 8GB GDDR6</div>
+              <div class="sc-prices"><span class="sc-old">G. 2.690.000</span><span class="sc-main">G. 2.290.000</span></div>
+              <button class="sc-btn-cart" onclick="addToCart('NVIDIA GeForce RTX 4060',2290000,'fa-display')"><i class="fa fa-cart-plus"></i> Agregar</button>
+            </div>
+          </div>
+          <div class="sc-card">
+            <div class="sc-card-img has-image">
+              <img src="assets/rtx-4070.webp" alt="NVIDIA GeForce RTX 4070" onerror="this.src=''; this.parentNode.classList.remove('has-image'); this.style.display='none'"/>
+              <span class="badge badge-new sc-badge">Nuevo</span>
+            </div>
+            <div class="sc-card-body">
+              <div class="sc-ref">Ref: GPU4070</div>
+              <div class="sc-brand">NVIDIA</div>
+              <div class="sc-name">GeForce RTX 4070 12GB GDDR6X</div>
+              <div class="sc-prices"><span class="sc-old">G. 4.990.000</span><span class="sc-main">G. 4.390.000</span></div>
+              <button class="sc-btn-cart" onclick="addToCart('NVIDIA GeForce RTX 4070',4390000,'fa-display')"><i class="fa fa-cart-plus"></i> Agregar</button>
+            </div>
+          </div>
+          <div class="sc-card">
+            <div class="sc-card-img has-image">
+              <img src="assets/rtx-4080.webp" alt="NVIDIA GeForce RTX 4080" onerror="this.src=''; this.parentNode.classList.remove('has-image'); this.style.display='none'"/>
+            </div>
+            <div class="sc-card-body">
+              <div class="sc-ref">Ref: GPU4080</div>
+              <div class="sc-brand">NVIDIA</div>
+              <div class="sc-name">GeForce RTX 4080 Super 16GB GDDR6X</div>
+              <div class="sc-prices"><span class="sc-old">G. 8.990.000</span><span class="sc-main">G. 7.990.000</span></div>
+              <button class="sc-btn-cart" onclick="addToCart('NVIDIA GeForce RTX 4080',7990000,'fa-display')"><i class="fa fa-cart-plus"></i> Agregar</button>
+            </div>
+          </div>
+          <div class="sc-card">
+            <div class="sc-card-img has-image">
+              <img src="assets/rtx-4090.webp" alt="NVIDIA GeForce RTX 4090" onerror="this.src=''; this.parentNode.classList.remove('has-image'); this.style.display='none'"/>
+              <span class="badge badge-sale sc-badge">Oferta</span>
+            </div>
+            <div class="sc-card-body">
+              <div class="sc-ref">Ref: GPU4090</div>
+              <div class="sc-brand">NVIDIA</div>
+              <div class="sc-name">GeForce RTX 4090 24GB GDDR6X</div>
+              <div class="sc-prices"><span class="sc-old">G. 15.990.000</span><span class="sc-main">G. 14.490.000</span></div>
+              <button class="sc-btn-cart" onclick="addToCart('NVIDIA GeForce RTX 4090',14490000,'fa-display')"><i class="fa fa-cart-plus"></i> Agregar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /PLACAS DE VIDEO -->
+    <!-- ==================== MONITORES ==================== -->
+    <div class="showcase-block" id="cat-monitores">
+      <div class="showcase-cat-label">
+        <div class="showcase-cat-icon"><i class="fa fa-display"></i></div>
+        <div>
+          <h3 class="showcase-cat-title">Monitores</h3>
+          <p class="showcase-cat-sub">Alta frecuencia 4K & 1ms respuesta</p>
+        </div>
+        <a href="#" class="btn-ver-todos" style="margin-left:auto">Ver todos <i class="fa fa-arrow-right"></i></a>
+      </div>
+      <div class="showcase-layout">
+        <div class="showcase-banner" id="banner-monitores">
+          <img src="assets/banner-monitores.jpg" alt="Monitores" class="banner-img" onerror="this.style.display='none'"/>
+          <div class="banner-overlay-info">
+            <span class="banner-cat-tag"><i class="fa fa-display"></i> Monitores</span>
+            <p class="banner-slogan">Jugá en otra<br/><strong>dimensión</strong></p>
+          </div>
+        </div>
+        <div class="showcase-cards">
+
+          <div class="sc-card">
+            <div class="sc-card-img has-image">
+              <img src="assets/asus-rog-swift.jpg" alt="ASUS ROG Swift" onerror="this.src=''; this.parentNode.classList.remove('has-image'); this.style.display='none'"/>
+              <span class="badge badge-hot sc-badge">Popular</span>
+            </div>
+            <div class="sc-card-body">
+              <div class="sc-ref">Ref: 101240</div>
+              <div class="sc-brand">ASUS ROG</div>
+              <div class="sc-name">Swift 27" 280Hz IPS QHD 1ms</div>
+              <div class="sc-prices">
+                <span class="sc-old">G. 2.590.000</span>
+                <span class="sc-main">G. 2.190.000</span>
+              </div>
+              <button class="sc-btn-cart" onclick="addToCart('ASUS ROG Swift 27&quot; 280Hz',2190000,'fa-display')"><i class="fa fa-cart-plus"></i> Agregar</button>
+            </div>
+          </div>
+
+          <div class="sc-card">
+            <div class="sc-card-img has-image">
+              <img src="assets/msi-optix.jpg" alt="MSI Optix" onerror="this.src=''; this.parentNode.classList.remove('has-image'); this.style.display='none'"/>
+              <span class="badge badge-new sc-badge">Nuevo</span>
+            </div>
+            <div class="sc-card-body">
+              <div class="sc-ref">Ref: 205431</div>
+              <div class="sc-brand">MSI</div>
+              <div class="sc-name">Optix MAG274QRF-QD 27" 165Hz</div>
+              <div class="sc-prices">
+                <span class="sc-old">G. 1.790.000</span>
+                <span class="sc-main">G. 1.490.000</span>
+              </div>
+              <button class="sc-btn-cart" onclick="addToCart('MSI Optix MAG274QRF-QD',1490000,'fa-display')"><i class="fa fa-cart-plus"></i> Agregar</button>
+            </div>
+          </div>
+
+          <div class="sc-card">
+            <div class="sc-card-img has-image">
+              <img src="assets/lg-ultragear-oled.jpg" alt="LG UltraGear OLED" onerror="this.src=''; this.parentNode.classList.remove('has-image'); this.style.display='none'"/>
+            </div>
+            <div class="sc-card-body">
+              <div class="sc-ref">Ref: 313466</div>
+              <div class="sc-brand">LG</div>
+              <div class="sc-name">UltraGear 32" 4K OLED 144Hz</div>
+              <div class="sc-prices">
+                <span class="sc-old">G. 4.500.000</span>
+                <span class="sc-main">G. 3.890.000</span>
+              </div>
+              <button class="sc-btn-cart" onclick="addToCart('LG UltraGear 32&quot; 4K OLED',3890000,'fa-display')"><i class="fa fa-cart-plus"></i> Agregar</button>
+            </div>
+          </div>
+
+          <div class="sc-card">
+            <div class="sc-card-img has-image">
+              <img src="assets/samsung-odyssey-g7.jpg" alt="Samsung Odyssey G7" onerror="this.src=''; this.parentNode.classList.remove('has-image'); this.style.display='none'"/>
+              <span class="badge badge-sale sc-badge">Oferta</span>
+            </div>
+            <div class="sc-card-body">
+              <div class="sc-ref">Ref: 200731</div>
+              <div class="sc-brand">SAMSUNG</div>
+              <div class="sc-name">Odyssey G7 32" Curvo QLED 240Hz</div>
+              <div class="sc-prices">
+                <span class="sc-old">G. 3.200.000</span>
+                <span class="sc-main">G. 2.690.000</span>
+              </div>
+              <button class="sc-btn-cart" onclick="addToCart('Samsung Odyssey G7 32&quot;',2690000,'fa-display')"><i class="fa fa-cart-plus"></i> Agregar</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- /MONITORES -->
+
+
+    <!-- ==================== ALMACENAMIENTO ==================== -->
+    <div class="showcase-block showcase-block--blue" id="cat-almacenamiento">
+      <div class="showcase-cat-label">
+        <div class="showcase-cat-icon sc-blue"><i class="fa fa-hard-drive"></i></div>
+        <div>
+          <h3 class="showcase-cat-title">Almacenamiento</h3>
+          <p class="showcase-cat-sub">SSD NVMe · SATA · Alto rendimiento</p>
+        </div>
+        <a href="#" class="btn-ver-todos" style="margin-left:auto">Ver todos <i class="fa fa-arrow-right"></i></a>
+      </div>
+      <div class="showcase-layout showcase-layout--reverse">
+        <div class="showcase-banner" id="banner-almacenamiento">
+          <img src="assets/banner-almacenamiento.jpg" alt="Almacenamiento" class="banner-img" onerror="this.style.display='none'"/>
+          <div class="banner-overlay-info">
+            <span class="banner-cat-tag"><i class="fa fa-hard-drive"></i> Almacenamiento</span>
+            <p class="banner-slogan">Velocidad para<br/><strong>todo tu setup</strong></p>
+          </div>
+        </div>
+        <div class="showcase-cards">
+          <div class="sc-card">
+            <div class="sc-card-img has-image"><img src="assets/ssd-kingston-nv2-500gb.webp" alt="SSD Kingston NV2 500GB" onerror="this.src=''; this.parentNode.classList.remove('has-image'); this.style.display='none'"/><span class="badge badge-hot sc-badge">🔥 Popular</span></div>
+            <div class="sc-card-body"><div class="sc-ref">Ref: SSD500NV2</div><div class="sc-brand sc-brand--blue">KINGSTON</div><div class="sc-name">SSD Kingston NV2 500GB NVMe M.2</div><div class="sc-prices"><span class="sc-old">G. 330.000</span><span class="sc-main">G. 280.000</span></div><button class="sc-btn-cart sc-btn-blue" onclick="addToCart('SSD Kingston NV2 500GB',280000,'fa-hard-drive')"><i class="fa fa-cart-plus"></i> Agregar</button></div>
+          </div>
+          <div class="sc-card">
+            <div class="sc-card-img has-image"><img src="assets/ssd-kingston-nv2-1tb.webp" alt="SSD Kingston NV2 1TB" onerror="this.src=''; this.parentNode.classList.remove('has-image'); this.style.display='none'"/><span class="badge badge-new sc-badge">Nuevo</span></div>
+            <div class="sc-card-body"><div class="sc-ref">Ref: SSD1TBNV2</div><div class="sc-brand sc-brand--blue">KINGSTON</div><div class="sc-name">SSD Kingston NV2 1TB NVMe M.2</div><div class="sc-prices"><span class="sc-old">G. 520.000</span><span class="sc-main">G. 450.000</span></div><button class="sc-btn-cart sc-btn-blue" onclick="addToCart('SSD Kingston NV2 1TB',450000,'fa-hard-drive')"><i class="fa fa-cart-plus"></i> Agregar</button></div>
+          </div>
+          <div class="sc-card">
+            <div class="sc-card-img has-image"><img src="assets/ssd-wd-green-480gb.webp" alt="SSD WD Green 480GB" onerror="this.src=''; this.parentNode.classList.remove('has-image'); this.style.display='none'"/></div>
+            <div class="sc-card-body"><div class="sc-ref">Ref: SSDWD480</div><div class="sc-brand sc-brand--blue">WD</div><div class="sc-name">SSD WD Green 480GB SATA 2.5&quot;</div><div class="sc-prices"><span class="sc-old">G. 290.000</span><span class="sc-main">G. 240.000</span></div><button class="sc-btn-cart sc-btn-blue" onclick="addToCart('SSD WD Green 480GB',240000,'fa-hard-drive')"><i class="fa fa-cart-plus"></i> Agregar</button></div>
+          </div>
+          <div class="sc-card">
+            <div class="sc-card-img has-image"><img src="assets/ssd-wd-blue-sn570-1tb.webp" alt="SSD WD Blue SN570 1TB" onerror="this.src=''; this.parentNode.classList.remove('has-image'); this.style.display='none'"/><span class="badge badge-sale sc-badge">Oferta</span></div>
+            <div class="sc-card-body"><div class="sc-ref">Ref: SSDSN570</div><div class="sc-brand sc-brand--blue">WD</div><div class="sc-name">SSD WD Blue SN570 1TB NVMe M.2</div><div class="sc-prices"><span class="sc-old">G. 590.000</span><span class="sc-main">G. 510.000</span></div><button class="sc-btn-cart sc-btn-blue" onclick="addToCart('SSD WD Blue SN570 1TB',510000,'fa-hard-drive')"><i class="fa fa-cart-plus"></i> Agregar</button></div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /ALMACENAMIENTO -->
+
+    <!-- ==================== NOTEBOOKS ==================== -->
+    <div class="showcase-block showcase-block--purple" id="cat-notebooks">
+      <div class="showcase-cat-label">
+        <div class="showcase-cat-icon sc-purple"><i class="fa fa-laptop"></i></div>
+        <div>
+          <h3 class="showcase-cat-title">Notebooks</h3>
+          <p class="showcase-cat-sub">Gaming · Profesional · Ultrabook · Workstation</p>
+        </div>
+        <a href="#" class="btn-ver-todos" style="margin-left:auto">Ver todos <i class="fa fa-arrow-right"></i></a>
+      </div>
+      <div class="showcase-layout showcase-layout--reverse">
+        <div class="showcase-banner" id="banner-notebooks">
+          <img src="assets/banner-notebooks.jpg" alt="Notebooks" class="banner-img" onerror="this.style.display='none'"/>
+          <div class="banner-overlay-info">
+            <span class="banner-cat-tag sc-purple-tag"><i class="fa fa-laptop"></i> Notebooks</span>
+            <p class="banner-slogan">Potencia donde<br/><strong>vayas</strong></p>
+          </div>
+        </div>
+        <div class="showcase-cards">
+
+          <div class="sc-card">
+            <div class="sc-card-img has-image">
+              <img src="assets/asus-rog-zephyrus.jpg" alt="ASUS ROG Zephyrus" onerror="this.src=''; this.parentNode.classList.remove('has-image'); this.style.display='none'"/>
+              <span class="badge badge-hot sc-badge">ðŸ”¥ Popular</span>
+            </div>
+            <div class="sc-card-body">
+              <div class="sc-ref">Ref: 701100</div>
+              <div class="sc-brand sc-brand--purple">ASUS ROG</div>
+              <div class="sc-name">Zephyrus G16 RTX 4080 i9 32GB 1TB</div>
+              <div class="sc-prices">
+                <span class="sc-old">G. 14.500.000</span>
+                <span class="sc-main">G. 12.990.000</span>
+              </div>
+              <button class="sc-btn-cart sc-btn-purple" onclick="addToCart('ASUS ROG Zephyrus G16',12990000,'fa-laptop')"><i class="fa fa-cart-plus"></i> Agregar</button>
+            </div>
+          </div>
+
+          <div class="sc-card">
+            <div class="sc-card-img has-image">
+              <img src="assets/msi-raider.jpg" alt="MSI Raider" onerror="this.src=''; this.parentNode.classList.remove('has-image'); this.style.display='none'"/>
+              <span class="badge badge-sale sc-badge">Oferta</span>
+            </div>
+            <div class="sc-card-body">
+              <div class="sc-ref">Ref: 701215</div>
+              <div class="sc-brand sc-brand--purple">MSI</div>
+              <div class="sc-name">Raider GE78HX RTX 4090 i9 64GB</div>
+              <div class="sc-prices">
+                <span class="sc-old">G. 22.000.000</span>
+                <span class="sc-main">G. 18.990.000</span>
+              </div>
+              <button class="sc-btn-cart sc-btn-purple" onclick="addToCart('MSI Raider GE78HX RTX 4090',18990000,'fa-laptop')"><i class="fa fa-cart-plus"></i> Agregar</button>
+            </div>
+          </div>
+
+          <div class="sc-card">
+            <div class="sc-card-img has-image">
+              <img src="assets/lenovo-legion.jpg" alt="Lenovo Legion" onerror="this.src=''; this.parentNode.classList.remove('has-image'); this.style.display='none'"/>
+              <span class="badge badge-new sc-badge">Nuevo</span>
+            </div>
+            <div class="sc-card-body">
+              <div class="sc-ref">Ref: 701320</div>
+              <div class="sc-brand sc-brand--purple">LENOVO</div>
+              <div class="sc-name">Legion Pro 7i Gen 9 RTX 4070 32GB</div>
+              <div class="sc-prices">
+                <span class="sc-old">G. 10.200.000</span>
+                <span class="sc-main">G. 8.990.000</span>
+              </div>
+              <button class="sc-btn-cart sc-btn-purple" onclick="addToCart('Lenovo Legion Pro 7i Gen 9',8990000,'fa-laptop')"><i class="fa fa-cart-plus"></i> Agregar</button>
+            </div>
+          </div>
+
+          <div class="sc-card">
+            <div class="sc-card-img has-image">
+              <img src="assets/hp-omen.jpg" alt="HP Omen" onerror="this.src=''; this.parentNode.classList.remove('has-image'); this.style.display='none'"/>
+            </div>
+            <div class="sc-card-body">
+              <div class="sc-ref">Ref: 701410</div>
+              <div class="sc-brand sc-brand--purple">HP</div>
+              <div class="sc-name">OMEN 16 RTX 4060 Ryzen 7 16GB</div>
+              <div class="sc-prices">
+                <span class="sc-old">G. 7.500.000</span>
+                <span class="sc-main">G. 6.490.000</span>
+              </div>
+              <button class="sc-btn-cart sc-btn-purple" onclick="addToCart('HP OMEN 16 RTX 4060',6490000,'fa-laptop')"><i class="fa fa-cart-plus"></i> Agregar</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- /NOTEBOOKS -->
+
+    <!-- ==================== JUEGOS Y CONSOLAS ==================== -->
+    <div class="showcase-block showcase-block--orange" id="cat-juegos">
+      <div class="showcase-cat-label">
+        <div class="showcase-cat-icon sc-orange"><i class="fa fa-gamepad"></i></div>
+        <div>
+          <h3 class="showcase-cat-title">Juegos y Consolas</h3>
+          <p class="showcase-cat-sub">PlayStation + Xbox + Nintendo + Juegos PC + Accesorios</p>
+        </div>
+        <a href="#" class="btn-ver-todos" style="margin-left:auto">Ver todos <i class="fa fa-arrow-right"></i></a>
+      </div>
+      <div class="showcase-layout">
+        <div class="showcase-banner" id="banner-juegos">
+          <img src="assets/banner-juegos.jpg" alt="Juegos y Consolas" class="banner-img" onerror="this.style.display='none'"/>
+          <div class="banner-overlay-info">
+            <span class="banner-cat-tag sc-orange-tag"><i class="fa fa-gamepad"></i> Juegos & Consolas</span>
+            <p class="banner-slogan">El juego<br/><strong>es todo</strong></p>
+          </div>
+        </div>
+        <div class="showcase-cards">
+
+          <div class="sc-card">
+            <div class="sc-card-img has-image">
+              <img src="assets/ps5.jpg" alt="PlayStation 5" onerror="this.src=''; this.parentNode.classList.remove('has-image'); this.style.display='none'"/>
+              <span class="badge badge-hot sc-badge">ðŸ”¥ Popular</span>
+            </div>
+            <div class="sc-card-body">
+              <div class="sc-ref">Ref: 800100</div>
+              <div class="sc-brand sc-brand--orange">SONY</div>
+              <div class="sc-name">PlayStation 5 Slim EdiciÃ³n Digital</div>
+              <div class="sc-prices">
+                <span class="sc-old">G. 2.800.000</span>
+                <span class="sc-main">G. 2.490.000</span>
+              </div>
+              <button class="sc-btn-cart sc-btn-orange" onclick="addToCart('PlayStation 5 Slim Digital',2490000,'fa-gamepad')"><i class="fa fa-cart-plus"></i> Agregar</button>
+            </div>
+          </div>
+
+          <div class="sc-card">
+            <div class="sc-card-img has-image">
+              <img src="assets/xbox-series-x.jpg" alt="Xbox Series X" onerror="this.src=''; this.parentNode.classList.remove('has-image'); this.style.display='none'"/>
+              <span class="badge badge-new sc-badge">Nuevo</span>
+            </div>
+            <div class="sc-card-body">
+              <div class="sc-ref">Ref: 800200</div>
+              <div class="sc-brand sc-brand--orange">MICROSOFT</div>
+              <div class="sc-name">Xbox Series X 1TB Negro</div>
+              <div class="sc-prices">
+                <span class="sc-old">G. 2.950.000</span>
+                <span class="sc-main">G. 2.590.000</span>
+              </div>
+              <button class="sc-btn-cart sc-btn-orange" onclick="addToCart('Xbox Series X 1TB',2590000,'fa-gamepad')"><i class="fa fa-cart-plus"></i> Agregar</button>
+            </div>
+          </div>
+
+          <div class="sc-card">
+            <div class="sc-card-img has-image">
+              <img src="assets/nintendo-switch-2.jpg" alt="Nintendo Switch 2" onerror="this.src=''; this.parentNode.classList.remove('has-image'); this.style.display='none'"/>
+              <span class="badge badge-new sc-badge">Nuevo</span>
+            </div>
+            <div class="sc-card-body">
+              <div class="sc-ref">Ref: 800310</div>
+              <div class="sc-brand sc-brand--orange">NINTENDO</div>
+              <div class="sc-name">Nintendo Switch 2 + Joy-Con</div>
+              <div class="sc-prices">
+                <span class="sc-old">G. 2.200.000</span>
+                <span class="sc-main">G. 1.990.000</span>
+              </div>
+              <button class="sc-btn-cart sc-btn-orange" onclick="addToCart('Nintendo Switch 2',1990000,'fa-gamepad')"><i class="fa fa-cart-plus"></i> Agregar</button>
+            </div>
+          </div>
+
+          <div class="sc-card">
+            <div class="sc-card-img has-image">
+              <img src="assets/juego-gta6.jpg" alt="GTA 6" onerror="this.src=''; this.parentNode.classList.remove('has-image'); this.style.display='none'"/>
+              <span class="badge badge-sale sc-badge">Oferta</span>
+            </div>
+            <div class="sc-card-body">
+              <div class="sc-ref">Ref: 800450</div>
+              <div class="sc-brand sc-brand--orange">ROCKSTAR</div>
+              <div class="sc-name">GTA VI – PS5 / Xbox Series</div>
+              <div class="sc-prices">
+                <span class="sc-old">G. 310.000</span>
+                <span class="sc-main">G. 270.000</span>
+              </div>
+              <button class="sc-btn-cart sc-btn-orange" onclick="addToCart('GTA VI PS5',270000,'fa-compact-disc')"><i class="fa fa-cart-plus"></i> Agregar</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- /JUEGOS Y CONSOLAS -->
+
+    <!-- ==================== GABINETES ==================== -->
+    <div class="showcase-block showcase-block--green" id="cat-gabinetes">
+      <div class="showcase-cat-label">
+        <div class="showcase-cat-icon sc-green"><i class="fa fa-box-open"></i></div>
+        <div>
+          <h3 class="showcase-cat-title">Gabinetes Gamer</h3>
+          <p class="showcase-cat-sub">Mid Tower · Full Tower · RGB · Vidrio templado</p>
+        </div>
+        <a href="#" class="btn-ver-todos" style="margin-left:auto">Ver todos <i class="fa fa-arrow-right"></i></a>
+      </div>
+      <div class="showcase-layout showcase-layout--reverse">
+        <div class="showcase-banner" id="banner-gabinetes">
+          <img src="assets/banner-gabinetes.jpg" alt="Gabinetes" class="banner-img" onerror="this.style.display='none'"/>
+          <div class="banner-overlay-info">
+            <span class="banner-cat-tag sc-green-tag"><i class="fa fa-box-open"></i> Gabinetes</span>
+            <p class="banner-slogan">Tu build,<br/><strong>tu estilo</strong></p>
+          </div>
+        </div>
+        <div class="showcase-cards">
+
+          <div class="sc-card">
+            <div class="sc-card-img has-image">
+              <img src="assets/msi-mag-forge.jpg" alt="MSI MAG Forge" onerror="this.src=''; this.parentNode.classList.remove('has-image'); this.style.display='none'"/>
+              <span class="badge badge-sale sc-badge">Oferta</span>
+            </div>
+            <div class="sc-card-body">
+              <div class="sc-ref">Ref: 112233</div>
+              <div class="sc-brand sc-brand--green">MSI</div>
+              <div class="sc-name">MAG Forge 321R Mid Tower ATX RGB</div>
+              <div class="sc-prices">
+                <span class="sc-old">G. 490.000</span>
+                <span class="sc-main">G. 390.000</span>
+              </div>
+              <button class="sc-btn-cart sc-btn-green" onclick="addToCart('MSI MAG Forge 321R',390000,'fa-box')"><i class="fa fa-cart-plus"></i> Agregar</button>
+            </div>
+          </div>
+
+          <div class="sc-card">
+            <div class="sc-card-img has-image">
+              <img src="assets/lian-li-o11.jpg" alt="Lian Li O11" onerror="this.src=''; this.parentNode.classList.remove('has-image'); this.style.display='none'"/>
+              <span class="badge badge-hot sc-badge">🔥 Popular</span>
+            </div>
+            <div class="sc-card-body">
+              <div class="sc-ref">Ref: 998811</div>
+              <div class="sc-brand sc-brand--green">LIAN LI</div>
+              <div class="sc-name">O11 Dynamic EVO Mid Tower Blanco</div>
+              <div class="sc-prices">
+                <span class="sc-old">G. 890.000</span>
+                <span class="sc-main">G. 750.000</span>
+              </div>
+              <button class="sc-btn-cart sc-btn-green" onclick="addToCart('Lian Li O11 Dynamic EVO',750000,'fa-box')"><i class="fa fa-cart-plus"></i> Agregar</button>
+            </div>
+          </div>
+
+          <div class="sc-card">
+            <div class="sc-card-img has-image">
+              <img src="assets/corsair-5000d.jpg" alt="Corsair 5000D" onerror="this.src=''; this.parentNode.classList.remove('has-image'); this.style.display='none'"/>
+              <span class="badge badge-new sc-badge">Nuevo</span>
+            </div>
+            <div class="sc-card-body">
+              <div class="sc-ref">Ref: 776655</div>
+              <div class="sc-brand sc-brand--green">CORSAIR</div>
+              <div class="sc-name">5000D Airflow Tempered Glass ATX</div>
+              <div class="sc-prices">
+                <span class="sc-old">G. 820.000</span>
+                <span class="sc-main">G. 680.000</span>
+              </div>
+              <button class="sc-btn-cart sc-btn-green" onclick="addToCart('Corsair 5000D Airflow',680000,'fa-box')"><i class="fa fa-cart-plus"></i> Agregar</button>
+            </div>
+          </div>
+
+          <div class="sc-card">
+            <div class="sc-card-img has-image">
+              <img src="assets/nzxt-h7.jpg" alt="NZXT H7" onerror="this.src=''; this.parentNode.classList.remove('has-image'); this.style.display='none'"/>
+            </div>
+            <div class="sc-card-body">
+              <div class="sc-ref">Ref: 554433</div>
+              <div class="sc-brand sc-brand--green">NZXT</div>
+              <div class="sc-name">H7 Flow RGB Mid Tower Negro</div>
+              <div class="sc-prices">
+                <span class="sc-old">G. 720.000</span>
+                <span class="sc-main">G. 590.000</span>
+              </div>
+              <button class="sc-btn-cart sc-btn-green" onclick="addToCart('NZXT H7 Flow RGB',590000,'fa-box')"><i class="fa fa-cart-plus"></i> Agregar</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- /GABINETES -->
+
+    <!-- ==================== PERIFÃ‰RICOS ==================== -->
+    <div class="showcase-block" id="cat-perifericos">
+      <div class="showcase-cat-label">
+        <div class="showcase-cat-icon"><i class="fa fa-keyboard"></i></div>
+        <div>
+          <h3 class="showcase-cat-title">Periféricos</h3>
+          <p class="showcase-cat-sub">Mouse · Teclado · Headset · Mousepad · Webcam</p>
+        </div>
+        <a href="#" class="btn-ver-todos" style="margin-left:auto">Ver todos <i class="fa fa-arrow-right"></i></a>
+      </div>
+      <div class="showcase-layout">
+        <div class="showcase-banner" id="banner-perifericos">
+          <img src="assets/banner-perifericos.jpg" alt="Periféricos" class="banner-img" onerror="this.style.display='none'"/>
+          <div class="banner-overlay-info">
+            <span class="banner-cat-tag"><i class="fa fa-keyboard"></i> Periféricos</span>
+            <p class="banner-slogan">Tu setup,<br/><strong>perfecto</strong></p>
+          </div>
+        </div>
+        <div class="showcase-cards">
+
+          <div class="sc-card">
+            <div class="sc-card-img has-image">
+              <img src="assets/logitech-g-pro.jpg" alt="Logitech G Pro" onerror="this.src=''; this.parentNode.classList.remove('has-image'); this.style.display='none'"/>
+              <span class="badge badge-hot sc-badge">🔥 Popular</span>
+            </div>
+            <div class="sc-card-body">
+              <div class="sc-ref">Ref: 101010</div>
+              <div class="sc-brand">LOGITECH</div>
+              <div class="sc-name">G Pro X Superlight 2 Gaming Mouse</div>
+              <div class="sc-prices">
+                <span class="sc-old">G. 590.000</span>
+                <span class="sc-main">G. 490.000</span>
+              </div>
+              <button class="sc-btn-cart" onclick="addToCart('Logitech G Pro X Superlight 2',490000,'fa-computer-mouse')"><i class="fa fa-cart-plus"></i> Agregar</button>
+            </div>
+          </div>
+
+          <div class="sc-card">
+            <div class="sc-card-img has-image">
+              <img src="assets/corsair-k70.jpg" alt="Corsair K70" onerror="this.src=''; this.parentNode.classList.remove('has-image'); this.style.display='none'"/>
+              <span class="badge badge-sale sc-badge">Oferta</span>
+            </div>
+            <div class="sc-card-body">
+              <div class="sc-ref">Ref: 101020</div>
+              <div class="sc-brand">CORSAIR</div>
+              <div class="sc-name">K70 RGB Pro MecÃ¡nico Cherry MX Red</div>
+              <div class="sc-prices">
+                <span class="sc-old">G. 820.000</span>
+                <span class="sc-main">G. 690.000</span>
+              </div>
+              <button class="sc-btn-cart" onclick="addToCart('Corsair K70 RGB Pro',690000,'fa-keyboard')"><i class="fa fa-cart-plus"></i> Agregar</button>
+            </div>
+          </div>
+
+          <div class="sc-card">
+            <div class="sc-card-img has-image">
+              <img src="assets/razer-blackshark.jpg" alt="Razer BlackShark" onerror="this.src=''; this.parentNode.classList.remove('has-image'); this.style.display='none'"/>
+              <span class="badge badge-new sc-badge">Nuevo</span>
+            </div>
+            <div class="sc-card-body">
+              <div class="sc-ref">Ref: 101030</div>
+              <div class="sc-brand">RAZER</div>
+              <div class="sc-name">BlackShark V2 Pro Wireless 7.1</div>
+              <div class="sc-prices">
+                <span class="sc-old">G. 720.000</span>
+                <span class="sc-main">G. 590.000</span>
+              </div>
+              <button class="sc-btn-cart" onclick="addToCart('Razer BlackShark V2 Pro',590000,'fa-headphones')"><i class="fa fa-cart-plus"></i> Agregar</button>
+            </div>
+          </div>
+
+          <div class="sc-card">
+            <div class="sc-card-img has-image">
+              <img src="assets/steelseries-mousepad.jpg" alt="SteelSeries Mousepad" onerror="this.src=''; this.parentNode.classList.remove('has-image'); this.style.display='none'"/>
+            </div>
+            <div class="sc-card-body">
+              <div class="sc-ref">Ref: 101040</div>
+              <div class="sc-brand">STEELSERIES</div>
+              <div class="sc-name">QcK Heavy XXL RGB 900x400mm</div>
+              <div class="sc-prices">
+                <span class="sc-old">G. 290.000</span>
+                <span class="sc-main">G. 230.000</span>
+              </div>
+              <button class="sc-btn-cart" onclick="addToCart('SteelSeries QcK Heavy XXL',230000,'fa-table')"><i class="fa fa-cart-plus"></i> Agregar</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- /PERIFÃ‰RICOS -->
+
+  </div>
+</section>
+
+<!-- ===== MARCAS ===== -->
+<section class="brands-section">
+  <div class="full-container">
+    <h2 class="section-title">Marcas Oficiales</h2>
+    <p class="section-sub">Distribuidores autorizados de las mejores marcas del mercado</p>
+    <div class="brands-track-wrapper">
+      <div class="brands-track">
+        <div class="brand-item"><span class="brand-name">INTEL</span></div>
+        <div class="brand-item"><span class="brand-name">AMD</span></div>
+        <div class="brand-item"><span class="brand-name">NVIDIA</span></div>
+        <div class="brand-item"><span class="brand-name">ASUS</span></div>
+        <div class="brand-item"><span class="brand-name">MSI</span></div>
+        <div class="brand-item"><span class="brand-name">CORSAIR</span></div>
+        <div class="brand-item"><span class="brand-name">SAMSUNG</span></div>
+        <div class="brand-item"><span class="brand-name">LOGITECH</span></div>
+        <div class="brand-item"><span class="brand-name">RAZER</span></div>
+        <div class="brand-item"><span class="brand-name">SONY</span></div>
+        <div class="brand-item"><span class="brand-name">NZXT</span></div>
+        <div class="brand-item"><span class="brand-name">KINGSTON</span></div>
+        <div class="brand-item"><span class="brand-name">INTEL</span></div>
+        <div class="brand-item"><span class="brand-name">AMD</span></div>
+        <div class="brand-item"><span class="brand-name">NVIDIA</span></div>
+        <div class="brand-item"><span class="brand-name">ASUS</span></div>
+        <div class="brand-item"><span class="brand-name">MSI</span></div>
+        <div class="brand-item"><span class="brand-name">CORSAIR</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OFERTAS DESTACADAS ===== -->
+<section class="products-section" id="ofertas">
+  <div class="full-container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">Ofertas Destacadas</h2>
+        <p class="section-sub">Precios especiales por tiempo limitado</p>
+      </div>
+      <a href="#" class="btn-ver-todos">Ver todos <i class="fa fa-arrow-right"></i></a>
+    </div>
+    <div class="products-grid" id="products-grid"></div>
+  </div>
+</section>
+
+<!-- ===== BANNER PROMO ===== -->
+<section class="promo-banner">
+  <div class="full-container">
+    <div class="promo-inner">
+      <div class="promo-text">
+        <h3>¿No sabes cómo armar tu PC?</h3>
+        <p>Nuestros especialistas te ayudan a elegir los componentes perfectos para tu presupuesto y necesidades.</p>
+        <button class="btn-primary" id="armaTuPC">Consultar Ahora <i class="fab fa-whatsapp"></i></button>
+      </div>
+      <div class="promo-icons">
+        <i class="fa fa-microchip"></i>
+        <i class="fa fa-plus"></i>
+        <i class="fa fa-memory"></i>
+        <i class="fa fa-plus"></i>
+        <i class="fa fa-hard-drive"></i>
+        <i class="fa fa-equals"></i>
+        <i class="fa fa-trophy"></i>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICIOS ===== -->
+<section class="services-section">
+  <div class="full-container">
+    <div class="services-grid">
+      <div class="service-card">
+        <i class="fa fa-truck-fast"></i>
+        <h4>Envío Rápido</h4>
+        <p>Despachamos en 24-48hs a todo el país</p>
+      </div>
+      <div class="service-card">
+        <i class="fa fa-shield-halved"></i>
+        <h4>Garantía Oficial</h4>
+        <p>Productos con garantía de fábrica hasta 3 años</p>
+      </div>
+      <div class="service-card">
+        <i class="fa fa-credit-card"></i>
+        <h4>Hasta 12 Cuotas</h4>
+        <p>Sin interés con tarjetas seleccionadas</p>
+      </div>
+      <div class="service-card">
+        <i class="fa fa-headset"></i>
+        <h4>Soporte Técnico</h4>
+        <p>Atención personalizada pre y post venta</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer" id="contacto">
+  <div class="full-container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-fallback" style="margin-bottom:1rem">
+          <div class="logo-hex small"><span>S</span></div>
+          <div>
+            <div class="logo-name">SANTOLOMEO</div>
+            <div class="logo-sub">STORE</div>
+          </div>
+        </div>
+        <p>Tu tienda especializada en PC gaming y componentes. Asunción, Paraguay.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Productos</h5>
+        <a href="#cat-componentes">Componentes</a>
+        <a href="#cat-monitores">Monitores</a>
+        <a href="#cat-notebooks">Notebooks</a>
+        <a href="#cat-juegos">Juegos y Consolas</a>
+        <a href="#cat-gabinetes">Gabinetes Gamer</a>
+        <a href="#cat-perifericos">Periféricos</a>
+      </div>
+      <div class="footer-col">
+        <h5>Información</h5>
+        <a href="#">Sobre Nosotros</a>
+        <a href="#">Políticas de Envío</a>
+        <a href="#">Garantía y Devoluciones</a>
+        <a href="#">Términos y Condiciones</a>
+        <a href="#">Privacidad</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contacto</h5>
+        <a href="#"><i class="fa fa-map-marker-alt"></i> Asunción, Paraguay</a>
+        <a href="#"><i class="fa fa-phone"></i> +595 981 000000</a>
+        <a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="#"><i class="fa fa-envelope"></i> ventas@santolomeo.com</a>
+        <div class="payment-icons">
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fab fa-cc-amex"></i>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Â© 2026 Santolomeo Store. Todos los derechos reservados.</span>
+      <span>Desarrollado con â¤ï¸ en Paraguay</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== CART DRAWER ===== -->
+<div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+<div class="cart-drawer" id="cart-drawer">
+  <div class="cart-header">
+    <h3><i class="fa fa-cart-shopping"></i> Mi Carrito</h3>
+    <div class="cart-header-actions">
+      <button class="cart-clear-btn" onclick="clearCart()" title="Vaciar carrito"><i class="fa fa-trash"></i> Vaciar</button>
+      <button onclick="toggleCart()"><i class="fa fa-xmark"></i></button>
+    </div>
+  </div>
+  <div class="cart-items" id="cart-items">
+    <div class="cart-empty">
+      <i class="fa fa-cart-shopping"></i>
+      <p>Tu carrito estÃ¡ vacÃ­o</p>
+    </div>
+  </div>
+  <div class="cart-footer" id="cart-footer" style="display:none">
+    <div class="cart-summary">
+      <div class="cart-summary-row">
+        <span>Subtotal (<span id="cart-item-count">0</span> productos)</span>
+        <span id="cart-subtotal">G. 0</span>
+      </div>
+      <div class="cart-summary-row cart-total-row">
+        <span>Total:</span>
+        <span id="cart-total-price" class="cart-total-amount">G. 0</span>
+      </div>
+    </div>
+    <button class="btn-checkout" onclick="openCheckout()">
+      <i class="fa fa-credit-card"></i> Proceder al Pago
+    </button>
+    <button class="btn-continue-shopping" onclick="toggleCart()">
+      <i class="fa fa-arrow-left"></i> Seguir comprando
+    </button>
+  </div>
+</div>
+
+<!-- ===== CHECKOUT MODAL ===== -->
+<div class="modal-overlay" id="checkout-modal" style="display:none">
+  <div class="modal">
+    <div class="modal-header">
+      <h3><i class="fa fa-lock"></i> Checkout Seguro</h3>
+      <button onclick="closeCheckout()"><i class="fa fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="checkout-steps">
+        <div class="step active" id="step1-tab">1. Datos</div>
+        <div class="step" id="step2-tab">2. Envío</div>
+        <div class="step" id="step3-tab">3. Pago</div>
+      </div>
+      <div class="checkout-step" id="step1">
+        <h4>Datos personales</h4>
+        <div class="form-row">
+          <input type="text" placeholder="Nombre completo" class="form-input"/>
+          <input type="text" placeholder="Cédula de identidad" class="form-input"/>
+        </div>
+        <input type="email" placeholder="Correo electrónico" class="form-input full"/>
+        <input type="tel" placeholder="Teléfono / WhatsApp" class="form-input full"/>
+        <button class="btn-primary full" onclick="nextStep(2)">Continuar <i class="fa fa-arrow-right"></i></button>
+      </div>
+      <div class="checkout-step" id="step2" style="display:none">
+        <h4>Datos de envío</h4>
+        <input type="text" placeholder="Dirección completa" class="form-input full"/>
+        <div class="form-row">
+          <input type="text" placeholder="Ciudad" class="form-input"/>
+          <input type="text" placeholder="Barrio / Zona" class="form-input"/>
+        </div>
+        <div class="shipping-options">
+          <label class="shipping-opt">
+            <input type="radio" name="shipping" value="standard" checked/>
+            <div><strong>Envío Estándar</strong><span>3-5 días hábiles – G. 50.000</span></div>
+          </label>
+          <label class="shipping-opt">
+            <input type="radio" name="shipping" value="express"/>
+            <div><strong>Envío Express</strong><span>24-48 horas – G. 90.000</span></div>
+          </label>
+          <label class="shipping-opt">
+            <input type="radio" name="shipping" value="pickup"/>
+            <div><strong>Retiro en Tienda</strong><span>Gratis – Asunción</span></div>
+          </label>
+        </div>
+        <div class="step-btns">
+          <button class="btn-outline" onclick="nextStep(1)"><i class="fa fa-arrow-left"></i> Volver</button>
+          <button class="btn-primary" onclick="nextStep(3)">Continuar <i class="fa fa-arrow-right"></i></button>
+        </div>
+      </div>
+      <div class="checkout-step" id="step3" style="display:none">
+        <h4>Método de pago</h4>
+        <div class="payment-methods">
+          <label class="pay-method active-pay" id="pm-card">
+            <input type="radio" name="payment" value="card" checked onchange="showPayForm('card')"/>
+            <i class="fa fa-credit-card"></i> Tarjeta de Crédito/Débito
+          </label>
+          <label class="pay-method" id="pm-transfer">
+            <input type="radio" name="payment" value="transfer" onchange="showPayForm('transfer')"/>
+            <i class="fa fa-building-columns"></i> Transferencia Bancaria
+          </label>
+          <label class="pay-method" id="pm-cash">
+            <input type="radio" name="payment" value="cash" onchange="showPayForm('cash')"/>
+            <i class="fa fa-money-bill-wave"></i> Pago en Tienda
+          </label>
+        </div>
+        <div id="card-form">
+          <div class="card-visual">
+            <div class="card-chip"></div>
+            <div class="card-number-display" id="card-number-display">•••• •••• •••• ••••</div>
+            <div class="card-info-display">
+              <span id="card-name-display">TITULAR</span>
+              <span id="card-exp-display">MM/AA</span>
+            </div>
+          </div>
+          <input type="text" placeholder="Número de tarjeta" class="form-input full" maxlength="19" oninput="formatCardNum(this)" id="card-num-input"/>
+          <input type="text" placeholder="Nombre del titular" class="form-input full" oninput="document.getElementById('card-name-display').textContent=this.value.toUpperCase()||'TITULAR'"/>
+          <div class="form-row">
+            <input type="text" placeholder="MM/AA" class="form-input" maxlength="5" oninput="formatExpiry(this)"/>
+            <input type="password" placeholder="CVV" class="form-input" maxlength="3"/>
+          </div>
+          <select class="form-input full">
+            <option>1 pago</option>
+            <option>3 cuotas sin interés</option>
+            <option>6 cuotas sin interés</option>
+            <option>12 cuotas</option>
+          </select>
+        </div>
+        <div id="transfer-form" style="display:none">
+          <div class="bank-info">
+            <p><strong>Banco Continental</strong></p>
+            <p>Cuenta Corriente: 123-456-789</p>
+            <p>RUC: 80012345-6</p>
+            <p>Enviar comprobante a: pagos@santolomeo.com</p>
+          </div>
+        </div>
+        <div id="cash-form" style="display:none">
+          <div class="bank-info">
+            <p><i class="fa fa-map-marker-alt"></i> <strong>Santolomeo Store</strong></p>
+            <p>Av. España 1234, Asunción</p>
+            <p>Lunes a Sábado: 8:00 – 19:00</p>
+          </div>
+        </div>
+        <div class="order-summary-mini" id="order-summary-mini"></div>
+        <div class="step-btns">
+          <button class="btn-outline" onclick="nextStep(2)"><i class="fa fa-arrow-left"></i> Volver</button>
+          <button class="btn-primary" onclick="placeOrder()"><i class="fa fa-lock"></i> Confirmar Pedido</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SUCCESS MODAL ===== -->
+<div class="modal-overlay" id="success-modal" style="display:none">
+  <div class="modal success-modal">
+    <div class="success-icon"><i class="fa fa-circle-check"></i></div>
+    <h3>Â¡Pedido Confirmado!</h3>
+    <p>Tu pedido fue recibido. Recibirás una confirmación por email y WhatsApp en breve.</p>
+    <p class="order-num">Pedido #SL-<span id="order-number"></span></p>
+    <button class="btn-primary full" onclick="closeSuccess()">Continuar Comprando</button>
+  </div>
+</div>
+
+<!-- Toast notification -->
+<div class="cart-toast" id="cart-toast">
+  <i class="fa fa-cart-plus"></i>
+  <span id="toast-msg">Producto agregado al carrito</span>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
