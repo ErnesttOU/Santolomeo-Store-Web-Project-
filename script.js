@@ -1,5 +1,5 @@
-﻿/* =============================================
-   SANTOLOMEO STORE â€“ main.js
+/* =============================================
+   SANTOLOMEO STORE – main.js
    ============================================= */
 
 // ===== PRODUCTS DATA =====
@@ -17,7 +17,7 @@ const products = [
 const peripherals = [
   { id: 101, brand: 'LOGITECH', name: 'G Pro X Superlight 2 Gaming Mouse',      price: 490000,  oldPrice: 590000,  icon: 'fa-computer-mouse', badges: ['hot'],         category: 'mouse',       img: 'assets/logitech-g-pro.jpg' },
   { id: 102, brand: 'ASUS',     name: 'ROG Swift 27" 280Hz IPS 1ms QHD',       price: 2190000, oldPrice: 2590000, icon: 'fa-desktop',        badges: ['sale','hot'],  category: 'monitor',     img: 'assets/asus-rog-swift.jpg' },
-  { id: 103, brand: 'CORSAIR',  name: 'K70 RGB Pro MecÃ¡nico Cherry MX Red',    price: 690000,  oldPrice: 820000,  icon: 'fa-keyboard',       badges: ['sale'],        category: 'keyboard',    img: 'assets/corsair-k70.jpg' },
+  { id: 103, brand: 'CORSAIR',  name: 'K70 RGB Pro Mecánico Cherry MX Red',    price: 690000,  oldPrice: 820000,  icon: 'fa-keyboard',       badges: ['sale'],        category: 'keyboard',    img: 'assets/corsair-k70.jpg' },
   { id: 104, brand: 'RAZER',    name: 'BlackShark V2 Pro Wireless 7.1',        price: 590000,  oldPrice: 720000,  icon: 'fa-headphones',     badges: ['new'],         category: 'headset',     img: 'assets/razer-blackshark.jpg' },
 ];
 
@@ -31,7 +31,7 @@ function renderProducts(list, gridId) {
 
   grid.innerHTML = list.map(p => {
     const badgeHtml = p.badges.map(b => {
-      const labels  = { sale: 'Oferta', new: 'Nuevo', hot: 'ðŸ”¥ Popular' };
+      const labels  = { sale: 'Oferta', new: 'Nuevo', hot: '🔥 Popular' };
       const classes = { sale: 'badge-sale', new: 'badge-new', hot: 'badge-hot' };
       return `<span class="badge ${classes[b]}">${labels[b]}</span>`;
     }).join('');
@@ -81,7 +81,7 @@ function addToCart(name, price, icon = 'fa-box') {
     cart.push({ name, price, icon, qty: 1 });
   }
   updateCartUI();
-  showToast(`${name.substring(0, 32)}â€¦ agregado`);
+  showToast(`${name.substring(0, 32)}… agregado`);
   bumpCartCount();
   openCartMoment();
 }
@@ -103,7 +103,7 @@ function changeQty(index, delta) {
 
 function clearCart() {
   if (cart.length === 0) return;
-  if (confirm('Â¿Vaciar el carrito?')) {
+  if (confirm('¿Vaciar el carrito?')) {
     cart = [];
     updateCartUI();
   }
@@ -122,7 +122,7 @@ function updateCartUI() {
     itemsEl.innerHTML = `
       <div class="cart-empty">
         <i class="fa fa-cart-shopping"></i>
-        <p>Tu carrito estÃ¡ vacÃ­o</p>
+        <p>Tu carrito está vacío</p>
       </div>`;
     footerEl.style.display = 'none';
     return;
@@ -312,7 +312,7 @@ function buildOrderSummary() {
     <strong style="display:block;margin-bottom:8px;color:var(--text)">Resumen del pedido</strong>
     ${cart.map(i => `
       <div style="display:flex;justify-content:space-between;margin-bottom:4px">
-        <span style="max-width:65%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${i.name} Ã—${i.qty}</span>
+        <span style="max-width:65%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${i.name} ×${i.qty}</span>
         <span style="font-weight:600;color:var(--text)">${formatPrice(i.price * i.qty)}</span>
       </div>`).join('')}
     <div style="display:flex;justify-content:space-between;margin-top:10px;padding-top:10px;border-top:1px solid var(--border);color:var(--text);font-weight:700;font-family:var(--font-head);font-size:16px">
@@ -354,7 +354,7 @@ function closeSuccess() {
 function formatCardNum(el) {
   let v = el.value.replace(/\D/g, '').substring(0, 16);
   el.value = v.replace(/(.{4})/g, '$1 ').trim();
-  const disp = v.padEnd(16, 'â€¢').replace(/(.{4})/g, '$1 ').trim();
+  const disp = v.padEnd(16, '•').replace(/(.{4})/g, '$1 ').trim();
   document.getElementById('card-number-display').textContent = disp;
 }
 
@@ -365,7 +365,7 @@ function formatExpiry(el) {
 }
 
 function viewProduct(id) {
-  // placeholder â€“ could open a product detail modal
+  // placeholder – could open a product detail modal
   console.log('View product:', id);
 }
 
