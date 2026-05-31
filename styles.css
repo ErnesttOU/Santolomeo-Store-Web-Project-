@@ -1956,3 +1956,192 @@ input, select { font-family: var(--font-body); }
   .sc-card:hover,
   .service-card:hover { transform: none; }
 }
+/* =============================================
+   RESPONSIVE FIX – solo correcciones mobile
+   Pegar al FINAL de styles.css
+   ============================================= */
+
+/* ===== HERO – evitar aplastamiento ===== */
+@media (max-width: 900px) {
+  .hero {
+    height: auto;
+    min-height: 420px;
+  }
+  .slide {
+    position: relative;
+    flex-direction: column;
+    padding-top: 0;
+    min-height: 420px;
+  }
+  .slide-bg-img img {
+    opacity: 0.25;
+    object-fit: cover;
+    object-position: center top;
+  }
+  .slide-content {
+    padding: 40px 20px 90px;
+    max-width: 100%;
+    z-index: 2;
+  }
+  .slide-visual { display: none; }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: 380px;
+  }
+  .slide {
+    min-height: 380px;
+  }
+  .slide-content {
+    padding: 32px 16px 88px;
+  }
+  .slide-content h1 {
+    font-size: 32px;
+  }
+}
+
+/* ===== QUICK CATS – 3 columnas en mobile, sin apilar ===== */
+@media (max-width: 900px) {
+  .cats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  .cats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .cat-card {
+    padding: 14px 8px;
+  }
+  .cat-icon {
+    width: 52px;
+    height: 44px;
+    font-size: 18px;
+  }
+  .cat-card span {
+    font-size: 11px;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 420px) {
+  .cats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+  .cat-card {
+    padding: 12px 6px;
+  }
+}
+
+/* ===== SC-CARD IMGS – alturas proporcionales, sin aplastamiento ===== */
+@media (max-width: 900px) {
+  .sc-card-img {
+    height: 160px;
+  }
+  .sc-card-img img {
+    object-fit: contain;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .sc-card-img {
+    height: 140px;
+  }
+}
+
+@media (max-width: 420px) {
+  .sc-card-img {
+    height: 120px;
+  }
+  .sc-card-img img {
+    padding: 8px;
+  }
+}
+
+/* ===== PRODUCT CARD IMGS ===== */
+@media (max-width: 640px) {
+  .product-img {
+    height: 160px;
+  }
+  .product-img img {
+    object-fit: contain;
+    padding: 12px;
+  }
+}
+
+/* ===== SHOWCASE BANNER – altura fija, no aplastada ===== */
+@media (max-width: 1024px) {
+  .showcase-banner {
+    height: 220px;
+    min-height: 220px;
+  }
+  .showcase-banner img.banner-img {
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .showcase-banner {
+    height: 180px;
+    min-height: 180px;
+  }
+}
+
+/* ===== SHOWCASE CARDS – 2 cols en mobile bien formadas ===== */
+@media (max-width: 640px) {
+  .showcase-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 12px;
+  }
+  .sc-card-body {
+    padding: 10px 12px 14px;
+  }
+  .sc-name {
+    font-size: 12px;
+  }
+  .sc-main {
+    font-size: 17px;
+  }
+  .sc-btn-cart {
+    font-size: 11px;
+    padding: 8px 6px;
+  }
+}
+
+/* ===== HEADER LOGO en mobile ===== */
+@media (max-width: 640px) {
+  .logo-img {
+    height: 40px;
+    max-width: 130px;
+    object-fit: contain;
+  }
+}
+/* ===== FIX HERO MOBILE – evitar apilamiento de slides ===== */
+@media (max-width: 900px) {
+  .hero {
+    position: relative;
+  }
+  .hero-slides {
+    position: relative;
+    height: 100%;
+    min-height: 420px;
+  }
+  .slide {
+    position: absolute;
+    inset: 0;
+    min-height: unset;
+  }
+  .slide:not(.active) {
+    display: none;
+  }
+}
